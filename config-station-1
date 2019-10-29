@@ -1,0 +1,19 @@
+apiVersion: v1
+clusters:
+- cluster:
+    insecure-skip-tls-verify: true
+    server: https://192.168.64.6:8443
+  name: 192-168-64-6:8443
+contexts:
+- context:
+    cluster: 192-168-64-6:8443
+    namespace: edge-demo-station-1
+    user: admin/192-168-64-6:8443
+  name: edge-demo-station-1/192-168-64-6:8443/admin
+current-context: edge-demo-station-1/192-168-64-6:8443/admin
+kind: Config
+preferences: {}
+users:
+- name: admin/192-168-64-6:8443
+  user:
+    token: xlareE2qfFjxW_9Gn4yEa0hjRIVgA1aEzlInjzuPVX4
