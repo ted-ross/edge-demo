@@ -16,11 +16,11 @@ Skupper create
 
 On HQ
 
-    skupper connection-token token.yaml
+    skupper connection-token config/token.yaml
 
 On Edges
 
-    skupper connect token.yaml
+    skupper connect config/token.yaml
 
 Develop and test services
 
