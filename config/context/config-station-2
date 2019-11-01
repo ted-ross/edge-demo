@@ -7,13 +7,13 @@ clusters:
 contexts:
 - context:
     cluster: 192-168-64-6:8443
-    namespace: edge-demo-station-1
+    namespace: edge-demo-station-2
     user: admin/192-168-64-6:8443
-  name: edge-demo-station-1/192-168-64-6:8443/admin
-current-context: edge-demo-station-1/192-168-64-6:8443/admin
+  name: edge-demo-station-2/192-168-64-6:8443/admin
+current-context: edge-demo-station-2/192-168-64-6:8443/admin
 kind: Config
 preferences: {}
 users:
 - name: admin/192-168-64-6:8443
   user:
-    token: xlareE2qfFjxW_9Gn4yEa0hjRIVgA1aEzlInjzuPVX4
+    token: 1jR7Xw-GGHxA-UeI8MQ9BpBqSXJ7IQEH3UWMEyazxm8

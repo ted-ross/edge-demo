@@ -7,11 +7,11 @@
 #
 # Then, build the image with:
 #
-# docker build -f src/main/docker/Dockerfile.jvm -t dejanb/edge-demo-jvm .
+# docker build -f src/main/docker/Dockerfile.jvm -t edge-demo/station-service-jvm .
 #
 # Then run the container using:
 #
-# docker run -i --rm -p 8080:8080 dejanb/edge-demo-jvm
+# docker run -i --rm -p 8080:8080 edge-demo/station-service-jvm
 #
 ###
 FROM fabric8/java-alpine-openjdk8-jre
