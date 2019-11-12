@@ -7,17 +7,7 @@
     <artifactId>edge-demo</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
-  <artifactId>booking-service</artifactId>
-  <properties>
-    <surefire-plugin.version>2.22.0</surefire-plugin.version>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <quarkus.version>0.25.0</quarkus.version>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <maven.compiler.parameters>true</maven.compiler.parameters>
-    <compiler-plugin.version>3.8.1</compiler-plugin.version>
-  </properties>
+  <artifactId>station-service</artifactId>
   <dependencyManagement>
     <dependencies>
       <dependency>
