@@ -58,6 +58,11 @@ Deploy Station 2
     oc apply -f config/templates/station-2.yml
     oc expose service station2
 
+Build and deploy in Minishift
+
+    oc new-app quay.io/quarkus/ubi-quarkus-native-s2i:19.2.1~https://github.com/dejanb/edge-demo.git --context-dir=charger-service --name=edge-demo-charger-service
+    oc new-app quay.io/quarkus/ubi-quarkus-native-s2i:19.2.1~https://github.com/dejanb/edge-demo.git --context-dir=station-service --name=edge-demo-station-service
+
 
 Test local on Station 1
 
