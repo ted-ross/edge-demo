@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hq-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      application: hq-service
+  template:
+    metadata:
+      labels:
+        application: hq-service
+    spec:
+      containers:
+      - name: hq-service
+        image: quay.io/ted_ross/skupper-hq-service
+        imagePullPolicy: Always
+        volumeMounts:
+        - mountPath: /etc/messaging/
+          name: connect
+      volumes:
+      - name: connect
+        secret:
+          secretName: skupper

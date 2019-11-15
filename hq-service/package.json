@@ -1,0 +1,14 @@
+{
+  "name": "hq-service",
+  "version": "1.0.0",
+  "description": "Headquarters service for KubeCon demo",
+  "main": "hq.js",
+  "scripts": {
+    "test": "hq.js"
+  },
+  "author": "tross@redhat.com",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "rhea": "^1.0.12"
+  }
+}

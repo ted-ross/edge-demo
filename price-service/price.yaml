@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: price-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      application: price-service
+  template:
+    metadata:
+      labels:
+        application: price-service
+    spec:
+      containers:
+      - name: price-service
+        image: quay.io/ted_ross/skupper-price-service
+        imagePullPolicy: Always
+        volumeMounts:
+        - mountPath: /etc/messaging/
+          name: connect
+      volumes:
+      - name: connect
+        secret:
+          secretName: skupper

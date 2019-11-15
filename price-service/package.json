@@ -1,0 +1,17 @@
+{
+  "name": "price-service",
+  "version": "1.0.0",
+  "description": "KubeCon Demo price receiver",
+  "main": "bin/price.js",
+  "bin": {
+    "price-service": "price.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tross@redhat.com",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "rhea": "^1.0.12"
+  }
+}
