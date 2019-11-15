@@ -1,0 +1,39 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: charger-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      application: charger-service
+  template:
+    metadata:
+      labels:
+        application: charger-service
+    spec:
+      containers:
+      - name: charger-service
+        image: quay.io/dejanb/charger-service
+        imagePullPolicy: Always
+        volumeMounts:
+        - mountPath: /etc/messaging/
+          name: connect
+      volumes:
+      - name: connect
+        secret:
+          secretName: skupper
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: charger-service
+  labels:
+    app: charger-service
+    service: charger-service
+spec:
+  ports:
+  - port: 8100
+    name: http
+  selector:
+    app: charger-service
