@@ -38,9 +38,17 @@ Build services
 
     mvn package -DskipTests
     
-    docker build -f charger-service/src/main/docker/Dockerfile.jvm -t edge-demo/charger-service:1.0.0-SNAPSHOT charger-service
+    docker build -f charger-service/src/main/docker/Dockerfile.jvm -t edge-demo/charger-service-jvm:1.0.0-SNAPSHOT charger-service
     
-    docker build -f station-service/src/main/docker/Dockerfile.jvm -t edge-demo/station-service:1.0.0-SNAPSHOT station-service
+    docker build -f station-service/src/main/docker/Dockerfile.jvm -t edge-demo/station-service-jvm:1.0.0-SNAPSHOT station-service
+    
+Build native services
+
+    mvn package -Pnative -Dquarkus.native.container-build=true
+    
+    docker build -f charger-service/src/main/docker/Dockerfile.native -t edge-demo/charger-service charger-service
+    
+    docker build -f station-service/src/main/docker/Dockerfile.native -t edge-demo/station-service station-service    
 
 Deploy Station 1
 
