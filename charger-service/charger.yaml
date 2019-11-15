@@ -37,3 +37,17 @@ spec:
     name: http
   selector:
     app: charger-service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: charger-service-a
+  labels:
+    app: charger-service
+    service: charger-service
+spec:
+  ports:
+  - port: 8100
+    name: http
+  selector:
+    app: charger-service
