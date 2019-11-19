@@ -20,11 +20,11 @@
 var amqp = require('rhea');
 var env  = process.env;
 
-amqp.create_container({enable_sasl_external:true}).connect().open_receiver('mc/priceSequence');
+var container = amqp.create_container({enable_sasl_external:true}).connect().open_receiver('mc/priceSequence');
 
-amqp.on('message', function (context) {
-    if (context.message.id && context.message.id < received) {
-        // ignore duplicate message
-        return;
-    }
+container.on('message', function (context) {
+    console.log("Received: ", context.message.body);
 });
+
+console.log("Price Service Started.");
+

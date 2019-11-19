@@ -1,20 +1,20 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: charger-service
+  name: edge-service
 spec:
   replicas: 1
   selector:
     matchLabels:
-      application: charger-service
+      application: edge-service
   template:
     metadata:
       labels:
-        application: charger-service
+        application: edge-service
     spec:
       containers:
-      - name: charger-service
-        image: quay.io/dejanb/charger-service
+      - name: edge-service
+        image: quay.io/ted_ross/skupper-edge-service
         imagePullPolicy: Always
         volumeMounts:
         - mountPath: /etc/messaging/
@@ -27,13 +27,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: charger-service
+  name: edge-service-rdu0
   labels:
-    app: charger-service
-    service: charger-service
+    app: edge-service
+    service: edge-service
 spec:
   ports:
   - port: 8080
-    name: http
+    targetPort: 8080
   selector:
-    app: charger-service
+    application: edge-service
